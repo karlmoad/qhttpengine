@@ -6,6 +6,10 @@ set(PROJECT_DESCRIPTION "Simple and secure HTTP server for Qt applications")
 set(PROJECT_AUTHOR "Nathan Osman")
 set(PROJECT_URL "https://github.com/nitroshare/qhttpengine")
 
+# my include of qt dir
+set(CMAKE_PREFIX_PATH $ENV{QT_DIR})
+
+
 set(PROJECT_VERSION_MAJOR 1)
 set(PROJECT_VERSION_MINOR 0)
 set(PROJECT_VERSION_PATCH 1)
@@ -21,7 +25,7 @@ set(INCLUDE_INSTALL_DIR include CACHE STRING "Header installation directory rela
 set(DOC_INSTALL_DIR share/doc/qhttpengine CACHE STRING "Documentation installation directory relative to the install prefix")
 set(EXAMPLES_INSTALL_DIR "${LIB_INSTALL_DIR}/qhttpengine/examples" CACHE STRING "Examples installation directory relative to the install prefix")
 
-find_package(Qt5Network 5.4 REQUIRED)
+find_package(Qt5 5.14 COMPONENTS Network REQUIRED)
 
 set(CMAKE_AUTOMOC ON)
 
